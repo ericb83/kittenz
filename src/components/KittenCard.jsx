@@ -9,11 +9,43 @@ const KittenCard = ({
   solvedKittensArray,
   setSolvedKittensArray,
 }) => {
+  const handleClick = () => {
+    if (cardOne === null) {
+      setCardOne(kitten);
+      return;
+    }
+    if (cardTwo === null) {
+      setCardTwo(kitten);
+      return;
+    }
+  };
+
   return (
-    <div className="flex h-80 w-80 items-center justify-center bg-secondary rounded-lg">
-      {/*Click Me*/} 
-      <img src={kitten.url}  className="object-cover w-full h-full rounded-lg"/>
-    </div>
+    <button
+      onClick={handleClick}
+      disabled={cardOne && cardTwo}
+      className="flex h-80 w-80 items-center justify-center bg-secondary rounded-lg"
+    >
+      <p
+        className={`${
+          (cardOne === kitten ||
+            cardTwo === kitten ||
+            solvedKittensArray.includes(kitten.url)) &&
+          "hidden"
+        }`}
+      >
+        Click me
+      </p>
+      <img
+        className={`${
+          cardOne != kitten &&
+          cardTwo != kitten &&
+          !solvedKittensArray.includes(kitten.url) &&
+          "hidden"
+        } object-cover w-full h-full rounded-lg`}
+        src={kitten.url}
+      />
+    </button>
   );
 };
 
