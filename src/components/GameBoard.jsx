@@ -63,6 +63,7 @@ const GameBoard = () => {
   useEffect(() => {
     fetchKittens();
   }, []);
+
   return (
     <div className="flex flex-wrap flex-row gap-4 w-full justify-center">
       {loading ? (
