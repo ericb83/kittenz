@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function Home() {
   const [kitten, setKitten] = useState(
-    "https://cdn2.thecatapi.com/images/apl8POz9w.jpg"
+    "https://cdn2.thecatapi.com/images/MTQ5NzQ2MA.jpg"
   );
   return (
     <main className="flex min-h-screen items-center justify-between bg-base-100 overflow-x-clip">
@@ -30,9 +30,7 @@ export default function Home() {
               for a purr-splosion of fun! 🐾
             </p>
             <div className="flex flex-row items-center gap-2">
-              <Link 
-                href="/game"
-                className="btn btn-primary">
+              <Link href="/game" className="btn btn-primary">
                 <FaGamepad className="text-xl" />
                 Start New Game{" "}
               </Link>
